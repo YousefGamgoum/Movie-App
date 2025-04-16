@@ -1,0 +1,28 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+  }
+  .page, .arrow {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .active {
+    background:#f1e82b;
+    color: white;
+    border-color: #f1e82b;
+  }
+  .arrow:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  .pointt {
+    padding: 8px 12px;
+  }
