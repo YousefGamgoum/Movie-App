@@ -1,0 +1,52 @@
+.navbar {
+    background-color: #f1d443;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  .logo {
+    font-weight: bold;
+    font-size: 16px;
+    color: #000;
+  }
+  .rightSection {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+     
+  }
+  .watchlist {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+    font-size: 14px;
+    cursor: pointer;
+    right: 80%;
+  }
+  .icon {
+    color: #111;
+    font-size: 20px;
+  }
+  .text {
+    font-weight: 500;
+    color: #000;
+  }
+  .num{
+    position: absolute;
+    top: 0px;
+    right: -25px;
+    background-color:black;
+    color:rgb(0, 0, 0);
+    font-size: 12px;
+    padding: 2px 7px;
+    border-radius: 50%;
+  }
+  
