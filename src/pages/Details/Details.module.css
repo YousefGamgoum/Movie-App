@@ -1,0 +1,41 @@
+#detaildContainer {
+    height: 45rem !important;
+    margin-top: 5rem !important;
+    display: flex !important;
+    /* justify-content: center; */
+    gap: 2rem;
+    /* width: 100rem; */
+}
+
+#detailedImage {
+    border-radius: 1.75rem;
+}
+
+#detailedDetail {
+    height: 80% !important;
+    margin: auto 0rem;
+}
+
+#detailPara {
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.ratess {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.starr {
+    font-size: 14px;
+    color: #ffca28;
+    margin-right: 2px;
+}
+
+.votess {
+    margin-left: 5px;
+    font-size: 1rem;
+    color: #666;
+    font-weight: 500;
+}
