@@ -1,29 +1,31 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router";
-import axiosInstance from "../../Apis/config";
+import { useNavigate, useParams } from "react-router";
+import axiosInstance from "../../../Apis/config";
 import styles from "./Details.module.css";
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-/>;
+import { toggleWishlist } from "../../redux/WishlistSlice";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import { useDispatch, useSelector } from "react-redux";
+import { FaHeart, FaRegHeart } from "react-icons/fa";
 <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 />;
 
-export default function Details({ id }) {
+export default function Details() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { id } = useParams();
+  const wishlistItems = useSelector((state) => state.wishlist.items);
+  const isInWishlist = wishlistItems.includes(id);
   const [detailed, setDetailed] = useState([]);
   const [imageUrl, setimageUrl] = useState("");
   useEffect(() => {
     axiosInstance
-      .get(`/tv/45789?api_key=33faf8f966f0a01f5334e6ee43da19f8`)
+      .get(`/tv/${id}?api_key=33faf8f966f0a01f5334e6ee43da19f8`)
       .then((res) => {
         setDetailed(res.data);
         setimageUrl(`https://image.tmdb.org/t/p/w500${res.data.poster_path}`);
-        console.log(res.data.poster_path);
       })
       .catch((err) => {
         navigate("/notfound");
@@ -31,7 +33,10 @@ export default function Details({ id }) {
       })
       .finally(() => {});
   }, []);
-
+  const handleHearttClick = (e) => {
+    e.stopPropagation();
+    dispatch(toggleWishlist(id));
+  };
   return (
     <>
       <div className="container" id={styles.detaildContainer}>
@@ -75,6 +80,19 @@ export default function Details({ id }) {
               {detailed.origin_country}
             </p>
           </div>
+          <button className={styles.heartButtonn} onClick={handleHearttClick}>
+            {isInWishlist ? (
+              <span className="btn btn-dark  fw-bold">
+                Remove form Whishlist
+                <FaHeart className={`ms-3 ${styles.heartFilled}`} />
+              </span>
+            ) : (
+              <span className="btn btn-outline-dark fw-bold">
+                Add to Whishlist
+                <FaRegHeart className={`ms-3 ${styles.heartOutline}`} />
+              </span>
+            )}
+          </button>
         </div>
       </div>
     </>

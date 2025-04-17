@@ -39,3 +39,34 @@
     color: #666;
     font-weight: 500;
 }
+
+.heartButtonn {
+    background: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+.heartButtonn:focus {
+    outline: none;
+}
+
+.heartFilled {
+    color: #f1e82b;
+    font-size: 20px;
+    transition: all 0.2s ease;
+}
+
+.heartOutline {
+    color: #ccc;
+    font-size: 20px;
+    transition: all 0.2s ease;
+}
+
+.heartButtonn:hover .heartOutline {
+    color: #f1e82b;
+    transform: scale(1.1);
+}
