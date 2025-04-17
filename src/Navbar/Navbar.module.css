@@ -1,0 +1,30 @@
+nav {
+  background-color: #ffe234;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1000;
+  font-weight: 900;
+}
+nav link {
+  display: flex;
+  gap: 15px;
+  text-decoration: none;
+  color: black;
+  padding: 6px 0;
+  position: relative;
+}
+select {
+  border: none;
+  color: black;
+  background-color: #ffe234;
+  font-weight: 900;
+}
+ select option{
+    background-color: white;
+    font-weight: 400;
+ }

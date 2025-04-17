@@ -1,0 +1,113 @@
+.card {
+    width: 200px;
+    margin: 15px;
+    transition: transform 0.3s ease;
+    position: relative;
+    background-color: transparent;
+  }
+  
+  .card:hover {
+    transform: scale(1.03);
+  }
+  
+  .imgContainer {
+    position: relative;
+    margin-bottom: 10px;
+  }
+  
+  .img {
+    width: 100%;
+    height: 300px;
+    border-radius: 8px;
+    border: none;
+    object-fit: cover;
+  }
+  
+  .ratingBadge {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    /* background-color: #081c22; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 16px;
+    /* color: white; */
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.7);
+  }
+  
+  .ratingCircle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+  
+  .ratingText {
+    z-index: 2;
+  }
+  
+  .details {
+    padding: 0 5px;
+  }
+  
+  .title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    overflow: hidden;
+    color: #333;
+    text-align: left;
+  }
+  
+  .dateHeart {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8px;
+  }
+  
+  .date {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+  }
+  
+  .heartButton {
+    background: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+  }
+  
+  .heartButton:focus {
+    outline: none;
+  }
+  
+  .heartFilled {
+    color: #f1e82b;
+    font-size: 20px;
+    transition: all 0.2s ease;
+  }
+  
+  .heartOutline {
+    /* color: #ccc; */
+    font-size: 20px;
+    transition: all 0.2s ease;
+  }
+  
+  .heartButton:hover .heartOutline {
+    color: #d6ec0e;
+    transform: scale(1.1);
+  }
+  
+   

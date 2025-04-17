@@ -1,0 +1,71 @@
+#detaildContainer {
+    height: 45rem !important;
+    margin-top: 5rem !important;
+    display: flex !important;
+    gap: 2rem;
+}
+
+#detailedImage {
+    border-radius: 1.75rem;
+}
+
+#detailedDetail {
+    height: 80% !important;
+    margin-top: 1rem !important;
+}
+
+#detailPara {
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.ratess {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.starr {
+    font-size: 14px;
+    color: #ffca28;
+    margin-right: 2px;
+}
+
+.votess {
+    margin-left: 5px;
+    font-size: 1rem;
+    color: #666;
+    font-weight: 500;
+}
+
+.heartButtonn {
+    background: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+
+}
+
+.heartButtonn:focus {
+    outline: none;
+}
+
+.heartFilled {
+    color: #f1e82b;
+    font-size: 20px;
+    transition: all 0.2s ease;
+}
+
+.heartOutline {
+    color: #000000;
+    font-size: 20px;
+    transition: all 0.2s ease;
+}
+
+.heartButtonn:hover .heartOutline {
+    color: #f1e82b;
+    transform: scale(1.1);
+}

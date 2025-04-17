@@ -1,0 +1,140 @@
+.movie-card {
+    width: 100%;
+    max-width: 220px;
+    margin-bottom: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.movie-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.movie-poster {
+    position: relative;
+    height: 330px;
+}
+
+.poster-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.movie-actions {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 10px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 10;
+}
+
+.movie-card:hover .movie-actions {
+    opacity: 1;
+}
+
+.action-btn {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+ 
+@media screen and (max-width: 576px) {
+    .movie-card {
+        max-width: 100%;
+        margin: 0 auto 15px;
+    }
+    
+    .movie-poster {
+        height: 280px;
+    }
+    
+    
+    .movie-actions {
+        opacity: 1;
+    }
+}
+
+ 
+@media screen and (min-width: 577px) and (max-width: 768px) {
+    .movie-card {
+        max-width: 160px;
+    }
+    
+    .movie-poster {
+        height: 240px;
+    }
+}
+ 
+@media screen and (min-width: 769px) and (max-width: 992px) {
+    .movie-card {
+        max-width: 180px;
+    }
+    
+    .movie-poster {
+        height: 270px;
+    }
+}
+
+ 
+@media screen and (min-width: 993px) {
+    .movie-card {
+        max-width: 220px;
+    }
+}
+
+ 
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 15px;
+    padding: 10px;
+}
+
+@media screen and (min-width: 577px) {
+    .movie-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 20px;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .movie-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+}
+
+@media screen and (min-width: 993px) {
+    .movie-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 25px;
+    }
+}
+
+.btn{
+    background-color: white;
+}
+
+#bii{
+    color: #ffe234;
+}
+
+#bii:hover{
+    color: red;
+}
