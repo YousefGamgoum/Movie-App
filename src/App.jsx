@@ -4,7 +4,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import Navbar from "./Navbar/Navbar";
 import Home from "./Home/Home";
-import WhishList from "./whish-list/whishlist";
+import WhishList from "./whish-list/whishList";
 import ShowTV from "./tv show/ShowTV";
 import Details from "./Details/Details";
 import MovieDetails from "./MovieDetails/MovieDetails";
