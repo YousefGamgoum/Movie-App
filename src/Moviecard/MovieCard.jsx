@@ -1,6 +1,6 @@
 import React from "react";
 import { MoreVertical } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { addWishlist, removeWishlist } from "../store/slice/wishlistSlice";
 import "./MovieCard.css";
@@ -17,11 +17,16 @@ const MovieCard = ({
   votes, // Ensure votes is passed (e.g., movie.vote_count from API)
 }) => {
   const navigate = useNavigate();
+  const loc = useLocation();
   const dispatch = useDispatch();
   const wishlist = useSelector((state) => state.wishlist.movies);
 
   const handleCardClick = (id) => {
-    navigate(`/movie/${id}`);
+    if (loc.pathname.includes("tv")) {
+      navigate(`/tv/${id}`);
+    } else {
+      navigate(`/movie/${id}`);
+    }
   };
 
   const handleOptionsClick = (e) => {
@@ -36,7 +41,9 @@ const MovieCard = ({
     title,
     date: releaseDate,
     rating,
-    poster: posterPath ? `https://image.tmdb.org/t/p/w500${posterPath}` : "https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-38-picture-grey-c2ebdbb057f2a7614185931650f8cee23fa137b93812ccb132b9df511df1cfac.svg",
+    poster: posterPath
+      ? `https://image.tmdb.org/t/p/w500${posterPath}`
+      : "https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-38-picture-grey-c2ebdbb057f2a7614185931650f8cee23fa137b93812ccb132b9df511df1cfac.svg",
     description: description || "No description available",
     votes: votes || 0,
   };
@@ -64,9 +71,12 @@ const MovieCard = ({
   const imageBaseUrl = "https://image.tmdb.org/t/p/w500";
 
   return (
-    <div onClick={()=>{
-      handleCardClick(id)
-    }} className="movie-card">
+    <div
+      onClick={() => {
+        handleCardClick(id);
+      }}
+      className="movie-card"
+    >
       <div
         className="movie-poster"
         style={!posterPath ? { backgroundColor: "#ddd" } : {}}
@@ -105,7 +115,9 @@ const MovieCard = ({
                 : ratingPercentage > 50
                 ? "#FFC107"
                 : "#F44336"
-            } ${ratingPercentage * 3.6}deg, #2e2e2e ${ratingPercentage * 3.6}deg)`,
+            } ${ratingPercentage * 3.6}deg, #2e2e2e ${
+              ratingPercentage * 3.6
+            }deg)`,
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
