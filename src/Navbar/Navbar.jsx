@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { updateCurrentLang } from "../store/slice/language";
 
-import { Link, useNavigate } from "react-router-dom"; 
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const { currentLang, availableLangs } = useSelector(
@@ -39,7 +39,7 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <span className="nav-link active" aria-current="page" >
+                <span className="nav-link active" aria-current="page">
                   Movie APP
                 </span>
               </li>
@@ -49,11 +49,10 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className="nav-item">
-              <Link className="nav-link" to="/tv">
-               TV shows
-               </Link>
+                <Link className="nav-link" to="/tv">
+                  TV shows
+                </Link>
               </li>
-             
 
               <li className="nav-item dropdown">
                 <button
@@ -99,7 +98,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-
-
-
