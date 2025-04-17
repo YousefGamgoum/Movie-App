@@ -1,4 +1,4 @@
-import "./APP.css";
+import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -8,7 +8,8 @@ import WhishList from "./whish-list/whishlist";
 import ShowTV from "./tv show/ShowTV";
 import Details from "./Details/Details";
 import MovieDetails from "./MovieDetails/MovieDetails";
-import { BrowserRouter as Router, Routes, Route, Form } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Form } from "react-router-dom";
+import NotFound from "./NotFound";
 const App = () => {
   return (
     <Router>
@@ -17,11 +18,10 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/wishlist" element={<WhishList />} />
-          <Route path="/tv" element={<ShowTV/>} />
-          <Route path="/tv/:id" element={<Details />}/>
-          <Route path="/movie/:id" element={<MovieDetails />}/>
-        
-          
+          <Route path="/tv" element={<ShowTV />} />
+          <Route path="/tv/:id" element={<Details />} />
+          <Route path="/movie/:id" element={<MovieDetails />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
     </Router>
